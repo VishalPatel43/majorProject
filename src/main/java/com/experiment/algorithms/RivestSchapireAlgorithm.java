@@ -1,7 +1,7 @@
 package com.experiment.algorithms;
 
 import com.experiment.dfas.DFAOperation;
-import com.experiment.dfas.LStarResult;
+import com.experiment.dfas.DeterministicResult;
 import de.learnlib.algorithms.rivestschapire.RivestSchapireDFA;
 import de.learnlib.algorithms.rivestschapire.RivestSchapireDFABuilder;
 import de.learnlib.api.oracle.MembershipOracle;
@@ -76,7 +76,7 @@ public class RivestSchapireAlgorithm {
                     System.out.println("Running RS on DFA " + (i + 1));
 
                     long startTime = System.currentTimeMillis();
-                    LStarResult learnedDFA = runRivestSchapire(currentDFA, i + 1);
+                    DeterministicResult learnedDFA = runRivestSchapire(currentDFA, i + 1);
                     long endTime = System.currentTimeMillis();
                     long timeTaken = endTime - startTime;
                     System.out.println("Time taken: " + timeTaken + " ms");
@@ -101,7 +101,7 @@ public class RivestSchapireAlgorithm {
         dfaOperation.saveDFAsToFile(learnedDFAs, new File(rsDFAsFolder, "dfas.ser"));
     }
 
-    private static LStarResult runRivestSchapire(CompactDFA<Character> target, int index) {
+    private static DeterministicResult runRivestSchapire(CompactDFA<Character> target, int index) {
 
 
         // Alphabet for the target DFA
@@ -173,6 +173,6 @@ public class RivestSchapireAlgorithm {
 //        System.out.println("Final observation table:");
 //        new ObservationTableASCIIWriter<>().write(rs.getObservationTable(), System.out);
 
-        return new LStarResult(result, rsExperiment.getRounds().getCount(), mqOracle.getCount());
+        return new DeterministicResult(result, rsExperiment.getRounds().getCount(), mqOracle.getCount());
     }
 }

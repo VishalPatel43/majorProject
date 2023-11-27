@@ -1,7 +1,7 @@
 package com.experiment.algorithms;
 
 import com.experiment.dfas.DFAOperation;
-import com.experiment.dfas.NLStarResult;
+import com.experiment.dfas.NondeterministicResult;
 import com.google.common.collect.Lists;
 
 import de.learnlib.algorithms.nlstar.NLStarLearner;
@@ -83,7 +83,7 @@ public class NLStarAlgorithm {
                     System.out.println("Running NL* on DFA " + (i + 1));
 
                     long startTime = System.currentTimeMillis();
-                    NLStarResult learnedNFA = runNLStar(currentDFA, i + 1);
+                    NondeterministicResult learnedNFA = runNLStar(currentDFA, i + 1);
                     long endTime = System.currentTimeMillis();
                     long timeTaken = endTime - startTime;
                     System.out.println("Time taken: " + timeTaken + " ms");
@@ -109,7 +109,7 @@ public class NLStarAlgorithm {
 
     }
 
-    private static NLStarResult runNLStar(CompactDFA<Character> dfa, int index) {
+    private static NondeterministicResult runNLStar(CompactDFA<Character> dfa, int index) {
 
         // Get the alphabet of the DFA
         Alphabet<Character> alphabet = dfa.getInputAlphabet();
@@ -183,6 +183,6 @@ public class NLStarAlgorithm {
         // Get the observation table of the NL* learner
 //        ObservationTable<Character> observationTable = nlstar.getObservationTable();
 
-        return new NLStarResult(result, nlstarExp.getRounds().getCount(), nlstarCounter.getCount());
+        return new NondeterministicResult(result, nlstarExp.getRounds().getCount(), nlstarCounter.getCount());
     }
 }

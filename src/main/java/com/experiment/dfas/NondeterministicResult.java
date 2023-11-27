@@ -2,13 +2,13 @@ package com.experiment.dfas;
 
 import net.automatalib.automata.fsa.NFA;
 
-public class NLStarResult {
+public class NondeterministicResult {
     private final NFA<?, Character> learnedNFA;
     //    private final long timeTaken;
     private final long membershipQueries;
     private final long equivalenceQueries;
 
-    public NLStarResult(NFA<?, Character> learnedNFA, long equivalenceQueries, long membershipQueries) {
+    public NondeterministicResult(NFA<?, Character> learnedNFA, long equivalenceQueries, long membershipQueries) {
         this.learnedNFA = learnedNFA;
 //        this.timeTaken = timeTaken;
         this.equivalenceQueries = equivalenceQueries;

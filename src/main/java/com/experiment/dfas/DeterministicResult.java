@@ -3,13 +3,13 @@ package com.experiment.dfas;
 import net.automatalib.automata.fsa.DFA;
 
 
-public class LStarResult {
+public class DeterministicResult {
     private final DFA<?, Character> learnedDFA;
     //    private final long timeTaken;
     private final long membershipQueries;
     private final long equivalenceQueries;
 
-    public LStarResult(DFA<?, Character> learnedDFA, long equivalenceQueries, long membershipQueries) {
+    public DeterministicResult(DFA<?, Character> learnedDFA, long equivalenceQueries, long membershipQueries) {
         this.learnedDFA = learnedDFA;
 //        this.timeTaken = timeTaken;
         this.equivalenceQueries = equivalenceQueries;

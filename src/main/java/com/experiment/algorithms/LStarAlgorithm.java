@@ -1,7 +1,7 @@
 package com.experiment.algorithms;
 
 import com.experiment.dfas.DFAOperation;
-import com.experiment.dfas.LStarResult;
+import com.experiment.dfas.DeterministicResult;
 import de.learnlib.algorithms.lstar.dfa.ClassicLStarDFA;
 import de.learnlib.algorithms.lstar.dfa.ClassicLStarDFABuilder;
 import de.learnlib.api.oracle.MembershipOracle.DFAMembershipOracle;
@@ -71,7 +71,7 @@ public class LStarAlgorithm {
                     System.out.println("Running NL* on DFA " + (i + 1));
 
                     long startTime = System.currentTimeMillis();
-                    LStarResult learnedDFA = runLStar(currentDFA, i + 1);
+                    DeterministicResult learnedDFA = runLStar(currentDFA, i + 1);
                     long endTime = System.currentTimeMillis();
                     long timeTaken = endTime - startTime;
                     System.out.println("Time taken: " + timeTaken + " ms");
@@ -97,7 +97,7 @@ public class LStarAlgorithm {
         dfaOperation.saveDFAsToFile(learnedDFAs, new File(lstarDFAsFolder, "dfas.ser"));
     }
 
-    private static LStarResult runLStar(CompactDFA<Character> target, int index) {
+    private static DeterministicResult runLStar(CompactDFA<Character> target, int index) {
         // Alphabet for the target DFA
         Alphabet<Character> inputs = dfaOperation.getInputAlphabets(target);
 
@@ -165,6 +165,6 @@ public class LStarAlgorithm {
 //        new ObservationTableASCIIWriter<>().write(lstar.getObservationTable(), System.out);
 
         // Return the learned model
-        return new LStarResult(result, experiment.getRounds().getCount(), mqOracle.getCount());
+        return new DeterministicResult(result, experiment.getRounds().getCount(), mqOracle.getCount());
     }
 }
