@@ -1,0 +1,73 @@
+digraph RandomDFA {
+  __start0 [label="", shape=none];
+  __start0 -> 0 [label=""];
+  0 [shape=circle] [shape=doublecircle]
+  0 -> 1 [label="a"]
+  0 -> 0 [label="b"]
+  1
+  1 -> 1 [label="a"]
+  1 -> 2 [label="b"]
+  2 [shape=doublecircle]
+  2 -> 3 [label="a"]
+  2 -> 4 [label="b"]
+  3 [shape=doublecircle]
+  3 -> 3 [label="a"]
+  3 -> 5 [label="b"]
+  4 [shape=doublecircle]
+  4 -> 6 [label="a"]
+  4 -> 6 [label="b"]
+  5 [shape=doublecircle]
+  5 -> 7 [label="a"]
+  5 -> 8 [label="b"]
+  6 [shape=doublecircle]
+  6 -> 9 [label="a"]
+  6 -> 10 [label="b"]
+  7 [shape=doublecircle]
+  7 -> 11 [label="a"]
+  7 -> 0 [label="b"]
+  8 [shape=doublecircle]
+  8 -> 12 [label="a"]
+  8 -> 5 [label="b"]
+  9
+  9 -> 13 [label="a"]
+  9 -> 14 [label="b"]
+  10 [shape=doublecircle]
+  10 -> 15 [label="a"]
+  10 -> 16 [label="b"]
+  11 [shape=doublecircle]
+  11 -> 17 [label="a"]
+  11 -> 9 [label="b"]
+  12
+  12 -> 15 [label="a"]
+  12 -> 18 [label="b"]
+  13
+  13 -> 19 [label="a"]
+  13 -> 2 [label="b"]
+  14
+  14 -> 20 [label="a"]
+  14 -> 7 [label="b"]
+  15 [shape=doublecircle]
+  15 -> 18 [label="a"]
+  15 -> 20 [label="b"]
+  16 [shape=doublecircle]
+  16 -> 20 [label="a"]
+  16 -> 21 [label="b"]
+  17
+  17 -> 4 [label="a"]
+  17 -> 22 [label="b"]
+  18
+  18 -> 10 [label="a"]
+  18 -> 11 [label="b"]
+  19
+  19 -> 2 [label="a"]
+  19 -> 22 [label="b"]
+  20 [shape=doublecircle]
+  20 -> 8 [label="a"]
+  20 -> 8 [label="b"]
+  21
+  21 -> 16 [label="a"]
+  21 -> 16 [label="b"]
+  22 [shape=doublecircle]
+  22 -> 6 [label="a"]
+  22 -> 17 [label="b"]
+}

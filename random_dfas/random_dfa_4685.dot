@@ -1,0 +1,7 @@
+digraph RandomDFA {
+  __start0 [label="", shape=none];
+  __start0 -> 0 [label=""];
+  0 [shape=circle]
+  0 -> 0 [label="a"]
+  0 -> 0 [label="b"]
+}
